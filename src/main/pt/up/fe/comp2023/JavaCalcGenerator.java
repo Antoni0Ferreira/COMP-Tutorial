@@ -1,8 +1,8 @@
-package pt.up.fe.comp2023 ;
+package pt.up.fe.comp2023;
 import pt.up.fe.comp.jmm.ast.AJmmVisitor ;
 import pt.up.fe.comp.jmm.ast.JmmNode ;
 
-public class JavaCalcGenerator extends AJmmVisitor <String,String> {
+public class JavaCalcGenerator extends AJmmVisitor<String,String> {
     private String className;
 
     public JavaCalcGenerator ( String className ) {
@@ -10,10 +10,10 @@ public class JavaCalcGenerator extends AJmmVisitor <String,String> {
     }
 
     protected void buildVisitor() {
-        addVisit (" Program ", this :: dealWithProgram );
-        addVisit (" Assignment ", this :: dealWithAssignment );
-        addVisit (" Integer ", this :: dealWithLiteral );
-        addVisit (" Identifier ", this :: dealWithLiteral );
+        addVisit ("Program", this :: dealWithProgram );
+        addVisit ("Assignment", this :: dealWithAssignment );
+        addVisit ("Integer", this :: dealWithLiteral );
+        addVisit ("Identifier", this :: dealWithLiteral );
     }
 
     private String dealWithProgram( JmmNode jmmNode , String s) {
